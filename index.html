@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rainbow Business Card</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, blue, pink);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .card-wrapper {
+      position: relative;
+      width: 340px;
+      height: 480px;
+      animation: rainbow-border 5s linear infinite;
+      border-radius: 20px;
+      padding: 3px;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background: transparent;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card-container:hover .card {
+      transform: rotateY(180deg);
+    }
+
+    .card-side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(0,0,255,0.5), rgba(128,0,128,0.5));
+      color: white;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+    }
+
+
+
+    .card-back {
+      transform: rotateY(180deg);
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    .name {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+
+
+    .info-box {
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 10px;
+      padding: 20px 16px;
+      border-radius: 12px;
+      width: 90%;
+      font-size: 15px;
+    }
+
+    @keyframes rainbow-border {
+      0% { box-shadow: 0 0 10px red; }
+      20% { box-shadow: 0 0 10px orange; }
+      40% { box-shadow: 0 0 10px yellow; }
+      60% { box-shadow: 0 0 10px green; }
+      80% { box-shadow: 0 0 10px blue; }
+      100% { box-shadow: 0 0 10px violet; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="card-wrapper">
+    <div class="card">
+      <div class="card-side card-front">
+        <img src="DSC09119.JPG" alt="Profile Photo">
+        <div class="name">Trung Le</div>
+        <div class="student-id">Student ID: S4133058</div>
+      </div>
+      <div class="card-side card-back">
+        <div class="info-box">📧 s4133058@rmit.edu.vn</div>
+        <div class="info-box">📞 0999999999</div>
+        <div class="info-box">First year in IT at RMIT<br>❤️ Love League of Legends and Formula 1</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
